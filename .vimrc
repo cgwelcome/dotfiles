@@ -26,7 +26,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme'
+
 call plug#end()
 
 filetype plugin indent on
@@ -40,10 +41,3 @@ autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 map <leader>nn :NERDTreeToggle<cr>
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.linenr=''
-let g:airline_powerline_fonts=1
-let g:airline_theme="luna"
