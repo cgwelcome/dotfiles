@@ -16,31 +16,19 @@ set relativenumber
 colorscheme koehler
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-ragtag'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'valloric/youcompleteme'
+call plug#end()
 
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Raimondi/delimitMate'
-Plugin 'ctrlpvim/ctrlp.vim'
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'powerline/fonts'
-
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'vim-syntatic/syntastic'
-
-call vundle#end()
 filetype plugin indent on
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
@@ -53,13 +41,9 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 map <leader>nn :NERDTreeToggle<cr>
 
-
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
-
 let g:airline_symbols.linenr=''
-
 let g:airline_powerline_fonts=1
 let g:airline_theme="luna"
