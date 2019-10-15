@@ -1,5 +1,3 @@
-# This file is NOT licensed under the GPLv3, which is the license for the rest
-# of YouCompleteMe.
 #
 # Here's the license text for this file:
 #
@@ -59,7 +57,7 @@ flags = [
 # compiled as C headers. You don't want that so ALWAYS specify the '-x' flag.
 # For a C project, you would set this to 'c' instead of 'c++'.
 '-x',
-'c++',
+'c',
 '-isystem',
 'cpp/pybind11',
 '-isystem',
@@ -72,6 +70,10 @@ get_python_inc(),
 'cpp/llvm/include',
 '-isystem',
 'cpp/llvm/tools/clang/include',
+'-I',
+'include',
+'-I',
+'/usr/include',
 '-I',
 'cpp/ycm',
 '-I',

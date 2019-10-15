@@ -40,5 +40,4 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 " Autocomplete only on trigger
 let g:ycm_auto_trigger = 0
 
-
 map <leader>nn :NERDTreeToggle<cr>
