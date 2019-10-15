@@ -40,4 +40,7 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 " Autocomplete only on trigger
 let g:ycm_auto_trigger = 0
 
+" Autoclose upon completion
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 map <leader>nn :NERDTreeToggle<cr>
