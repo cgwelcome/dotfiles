@@ -33,9 +33,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'mgechev/vim-jsx'
 
 call plug#end()
->>>>>>> Stashed changes
-
-call plug#end()
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2
