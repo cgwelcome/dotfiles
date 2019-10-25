@@ -18,13 +18,16 @@ hi Pmenu ctermfg=yellow ctermbg=black
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'valloric/youcompleteme'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'valloric/youcompleteme'
 Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
@@ -37,10 +40,13 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
-" Autocomplete only on trigger
-let g:ycm_auto_trigger = 0
 
-" Autoclose upon completion
-let g:ycm_autoclose_preview_window_after_completion = 1
+" Disable C linter, YCM handles it
+let g:ale_linters = {'c': [], 'cpp': []}
 
-map <leader>nn :NERDTreeToggle<cr>
+" Hide ALE cursor
+let g:ale_echo_cursor = 0
+
+let g:mapleader = ' '
+nnoremap <silent><leader>nn :NERDTreeToggle<CR>
+nnoremap <silent><leader><space> :Files<CR>
