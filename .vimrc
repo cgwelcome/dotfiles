@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-ragtag'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
@@ -29,6 +30,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'mgechev/vim-jsx'
+
+call plug#end()
+>>>>>>> Stashed changes
 
 call plug#end()
 
