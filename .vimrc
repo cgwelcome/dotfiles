@@ -9,6 +9,9 @@ set ff=unix
 set encoding=utf-8
 set relativenumber
 
+set exrc
+set secure
+
 colorscheme koehler
 hi Pmenu ctermfg=yellow ctermbg=black
 
@@ -35,8 +38,8 @@ Plug 'mgechev/vim-jsx'
 
 call plug#end()
 
-set shiftwidth=8
-set tabstop=8
+set shiftwidth=4
+set tabstop=4
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
@@ -44,12 +47,6 @@ autocmd FileType javascript.jsx setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-
-" Disable C linter, YCM handles it
-" let g:ale_linters = {'c': [], 'cpp': []}
-
-" Hide ALE cursor
-"let g:ale_echo_cursor = 0
 
 " Hack + Powerline patch font
 let g:airline_powerline_fonts = 1
@@ -67,8 +64,12 @@ let g:airline_symbols.maxlinenr = ''
 " Airline Theme
 let g:airline_theme = 'murmur'
 
+" NerdTree
 let g:mapleader = ' '
+let g:NERDTreeQuitOnOpen = 1
 nnoremap <leader>nn :NERDTreeToggle<CR>
+
+" Fzf
 nnoremap <leader><space> :Files<CR>
 
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
@@ -80,11 +81,3 @@ nnoremap <leader>gti :YcmCompleter GoToInclude<CR>
 nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>yd :YcmDiags<CR>
-
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
