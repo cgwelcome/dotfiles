@@ -36,6 +36,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-ragtag'
 Plug 'mgechev/vim-jsx'
 
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 set shiftwidth=4
@@ -51,7 +53,7 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 " Hack + Powerline patch font
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.branch = ''
@@ -72,6 +74,12 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 " Fzf
 nnoremap <leader><space> :Files<CR>
 
+" vimtex
+let g:vimtex_view_general_viewer = 'zathura'
+let g:indentLine_concealcursor = ''
+let g:indentLine_setConceal = 1
+
+" ycm
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 nnoremap <leader>fi :YcmCompleter FixIt<CR>
 nnoremap <leader>gd :YcmCompleter GetDoc<CR>
@@ -81,3 +89,11 @@ nnoremap <leader>gti :YcmCompleter GoToInclude<CR>
 nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>yd :YcmDiags<CR>
+
+let g:ycm_show_diagnostics_ui = 0
+
+let g:ale_linters = {
+	\ 'tex': ['chktex'],
+	\ 'cpp': ['clang', 'clangtidy']
+	\ }
+
