@@ -3,6 +3,8 @@ let g:ale_cpp_clang_options='
 	\ -fexceptions -DNDEBUG -std=c++17 -xc++
 	\ -isystem /usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include/g++-v9'
 
+let g:ale_cpp_clangtidy_options = ''
+
 set cino=N-s,g0,:0
 set shiftwidth=2
 set tabstop=2
