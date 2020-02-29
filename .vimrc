@@ -63,19 +63,23 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
 
-" Airline Theme
+" airline Theme
 let g:airline_theme = 'murmur'
 
-" NerdTree
+" nerdtree
 let g:mapleader = ' '
 let g:NERDTreeQuitOnOpen = 1
 nnoremap <leader>nn :NERDTreeToggle<CR>
 
-" Fzf
+" fzf
 nnoremap <leader><space> :Files<CR>
 
 " vimtex
 let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_indent_ignored_envs = ['document', 'center', 'minipage',
+			\ 'flushleft', 'flushright']
+
+" indentLine
 let g:indentLine_concealcursor = ''
 let g:indentLine_setConceal = 1
 
@@ -92,8 +96,8 @@ nnoremap <leader>yd :YcmDiags<CR>
 
 let g:ycm_show_diagnostics_ui = 0
 
+" ale
 let g:ale_linters = {
-	\ 'tex': ['chktex'],
-	\ 'cpp': ['clang', 'clangtidy']
-	\ }
-
+			\ 'tex': ['chktex'],
+			\ 'cpp': ['clang']
+			\ }
