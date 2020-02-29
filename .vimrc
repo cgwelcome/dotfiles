@@ -1,10 +1,10 @@
 set nocompatible
-set backspace=2         " backspace in insert mode works like normal editor
+set backspace=2         " backspace
 syntax on               " syntax highlighting
 set autoindent          " auto indenting
 set number              " line numbers
 set noswapfile
-set nobackup            " get rid of anoying ~file
+set nobackup            " get rid of swap files
 set ff=unix
 set encoding=utf-8
 set relativenumber
@@ -40,21 +40,24 @@ Plug 'lervag/vimtex'
 
 call plug#end()
 
-set shiftwidth=4
-set tabstop=4
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript.jsx setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+autocmd FileType vim setlocal shiftwidth=4 tabstop=4
+
+set cino+=t-2s,g0,:0,N-s,+0,{s,(0
+
+" Vim Script
+
+let g:vim_indent_cont = &sw * 2
 
 " Hack + Powerline patch font
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
+
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly =''
@@ -63,7 +66,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
 
-" airline Theme
+" airline
 let g:airline_theme = 'murmur'
 
 " nerdtree
@@ -77,7 +80,7 @@ nnoremap <leader><space> :Files<CR>
 " vimtex
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_indent_ignored_envs = ['document', 'center', 'minipage',
-			\ 'flushleft', 'flushright']
+    \ 'flushleft', 'flushright']
 
 " indentLine
 let g:indentLine_concealcursor = ''
@@ -98,6 +101,6 @@ let g:ycm_show_diagnostics_ui = 0
 
 " ale
 let g:ale_linters = {
-			\ 'tex': ['chktex'],
-			\ 'cpp': ['clang']
-			\ }
+    \ 'tex': ['chktex'],
+    \ 'cpp': ['clang']
+    \ }
