@@ -32,11 +32,13 @@ Plug 'yggdroot/indentline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 
 Plug 'tpope/vim-ragtag'
 Plug 'mgechev/vim-jsx'
 
 Plug 'lervag/vimtex'
+Plug 'nacitar/a.vim'
 
 call plug#end()
 
@@ -102,5 +104,16 @@ let g:ycm_show_diagnostics_ui = 0
 " ale
 let g:ale_linters = {
     \ 'tex': ['chktex'],
-    \ 'cpp': ['clang']
+    \ 'cpp': ['clang', 'clangtidy']
     \ }
+
+" clang-tidy fixer is broken
+let g:ale_fixers = {
+    \ 'cpp': ['clang-format']
+    \ }
+
+let g:ale_c_parse_compile_commands = 1
+let g:ale_cpp_clang_options = ''
+let g:ale_fix_on_save = 1
+
+noremap <C-K> :pyf /usr/lib/llvm/8/share/clang/clang-format.py<CR>
