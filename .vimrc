@@ -9,9 +9,6 @@ set ff=unix
 set encoding=utf-8
 set relativenumber
 
-set exrc
-set secure
-
 colorscheme koehler
 hi Pmenu ctermfg=yellow ctermbg=black
 
@@ -28,7 +25,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'w0rp/ale'
-Plug 'yggdroot/indentline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -41,6 +37,8 @@ Plug 'lervag/vimtex'
 Plug 'nacitar/a.vim'
 
 call plug#end()
+
+au BufRead,BufNewFile *.asm set filetype=nasm
 
 set shiftwidth=2
 set tabstop=2
@@ -104,16 +102,15 @@ let g:ycm_show_diagnostics_ui = 0
 " ale
 let g:ale_linters = {
     \ 'tex': ['chktex'],
-    \ 'cpp': ['clang', 'clangtidy']
+    \ 'cpp': ['clang'],
     \ }
 
-" clang-tidy fixer is broken
 let g:ale_fixers = {
     \ 'cpp': ['clang-format']
     \ }
 
+au BufEnter *.tex let g:ycm_auto_trigger = 0
 let g:ale_c_parse_compile_commands = 1
 let g:ale_cpp_clang_options = ''
+let g:ale_nasm_nasm_options = '-f elf32'
 let g:ale_fix_on_save = 1
-
-noremap <C-K> :pyf /usr/lib/llvm/8/share/clang/clang-format.py<CR>
