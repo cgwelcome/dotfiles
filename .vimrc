@@ -16,8 +16,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug '~/.fzf'
 
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
@@ -46,45 +45,27 @@ set expandtab
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType vim setlocal shiftwidth=4 tabstop=4
 
-set cino+=t-2s,g0,:0,N-s,+0,{s,(0
+let g:mapleader = ' '
 
-" Vim Script
-
-let g:vim_indent_cont = &sw * 2
-
-" Hack + Powerline patch font
+" Airline
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
 let g:airline_symbols.crypt = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly =''
-let g:airline_symbols.dirty = '!'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ''
-
-" airline
 let g:airline_theme = 'murmur'
 
 " nerdtree
-let g:mapleader = ' '
 let g:NERDTreeQuitOnOpen = 1
 nnoremap <leader>nn :NERDTreeToggle<CR>
 
 " fzf
-nnoremap <leader><space> :Files<CR>
+nnoremap <leader><space> :FZF<CR>
 
 " vimtex
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_indent_ignored_envs = ['document', 'center', 'minipage',
     \ 'flushleft', 'flushright']
-
-" indentLine
-let g:indentLine_concealcursor = ''
-let g:indentLine_setConceal = 1
 
 " ycm
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
