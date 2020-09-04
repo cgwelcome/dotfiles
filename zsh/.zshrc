@@ -80,6 +80,8 @@ plugins=(
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
+  docker
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh

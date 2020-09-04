@@ -29,8 +29,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 
-Plug 'tpope/vim-ragtag'
 Plug 'mgechev/vim-jsx'
+Plug 'mattn/emmet-vim'
 
 Plug 'lervag/vimtex'
 Plug 'nacitar/a.vim'
