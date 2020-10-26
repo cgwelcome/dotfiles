@@ -79,6 +79,8 @@ nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>yd :YcmDiags<CR>
 
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/.ycm_extra_conf.py'
+au BufEnter *.tex let g:ycm_auto_trigger = 0
 
 " ale
 let g:ale_linters = {
@@ -90,7 +92,6 @@ let g:ale_fixers = {
     \ 'cpp': ['clang-format']
     \ }
 
-au BufEnter *.tex let g:ycm_auto_trigger = 0
 let g:ale_c_parse_compile_commands = 1
 let g:ale_cpp_clang_options = ''
 let g:ale_nasm_nasm_options = '-f elf32'
