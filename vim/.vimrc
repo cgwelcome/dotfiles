@@ -12,7 +12,17 @@ set ff=unix
 set encoding=utf-8
 set updatetime=300
 set signcolumn=yes
+set shortmess+=c
+set cmdheight=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
 
+au BufRead,BufNewFile *.asm set filetype=nasm
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+autocmd FileType vim setlocal shiftwidth=4 tabstop=4
+
+let g:mapleader = ' '
 
 colorscheme koehler
 hi Pmenu ctermfg=yellow ctermbg=black
@@ -40,16 +50,6 @@ Plug 'nacitar/a.vim'
 
 call plug#end()
 
-au BufRead,BufNewFile *.asm set filetype=nasm
-
-set shiftwidth=2
-set tabstop=2
-set expandtab
-autocmd FileType python setlocal shiftwidth=4 tabstop=4
-autocmd FileType vim setlocal shiftwidth=4 tabstop=4
-
-let g:mapleader = ' '
-
 " Airline
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -73,26 +73,27 @@ let g:vimtex_indent_ignored_envs = ['document', 'center', 'minipage',
 " ale
 let g:ale_linters = {
     \ 'tex': ['chktex'],
-    \ 'cpp': ['clang'],
     \ }
 
 let g:ale_fixers = {
     \ 'cpp': ['clang-format']
     \ }
 
-let g:ale_c_parse_compile_commands = 1
-let g:ale_cpp_clang_options = ''
-let g:ale_nasm_nasm_options = '-f elf32'
+let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
 " coc
 let g:coc_global_extensions = [
-        \ 'coc-clangd',
+        \ 'coc-snippets',
         \ 'coc-vimlsp',
         \ 'coc-json']
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -187,3 +188,23 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" coc-snippets
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
