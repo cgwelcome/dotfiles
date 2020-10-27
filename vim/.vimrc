@@ -5,22 +5,29 @@ set hidden
 set autoindent
 set number
 set relativenumber
+set signcolumn=yes
 set nobackup
 set noswapfile
 set nowritebackup
 set ff=unix
 set encoding=utf-8
 set updatetime=300
-set signcolumn=yes
 set shortmess+=c
-set cmdheight=2
+
 set shiftwidth=2
 set tabstop=2
 set expandtab
 
-au BufRead,BufNewFile *.asm set filetype=nasm
+set splitright
+
+autocmd BufRead,BufNewFile *.asm setlocal filetype=nasm
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType vim setlocal shiftwidth=4 tabstop=4
+if has('nvim')
+    autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
+    tnoremap <Esc> <C-\><C-n>
+    command! -nargs=* T tabnew | terminal <args>
+endif
 
 let g:mapleader = ' '
 
