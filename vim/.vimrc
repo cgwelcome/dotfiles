@@ -16,6 +16,7 @@ set shortmess+=c
 
 set shiftwidth=2
 set tabstop=2
+set cmdheight=2
 set expandtab
 
 set splitright

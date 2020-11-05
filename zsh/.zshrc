@@ -80,6 +80,7 @@ plugins=(
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
+  tmux
   docker
   docker-compose
 )
