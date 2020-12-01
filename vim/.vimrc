@@ -27,7 +27,6 @@ autocmd FileType vim setlocal shiftwidth=4 tabstop=4
 if has('nvim')
     autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
     tnoremap <Esc> <C-\><C-n>
-    command! -nargs=* T tabnew | terminal <args>
 endif
 
 let g:mapleader = ' '
