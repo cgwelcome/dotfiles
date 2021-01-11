@@ -31,12 +31,15 @@ endif
 
 let g:mapleader = ' '
 
+let g:python_host_prog='/usr/bin/python'
+
 colorscheme koehler
 hi Pmenu ctermfg=yellow ctermbg=black
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-gitgutter'
 Plug '~/.fzf'
 
@@ -80,10 +83,13 @@ let g:vimtex_indent_ignored_envs = ['document', 'center', 'minipage',
 " ale
 let g:ale_linters = {
     \ 'tex': ['chktex'],
+    \ 'python': ['flake8'],
     \ }
 
 let g:ale_fixers = {
-    \ 'cpp': ['clang-format']
+    \ 'cpp': ['clang-format'],
+    \ 'haskell': ['brittany'],
+    \ 'python': ['black'],
     \ }
 
 let g:ale_linters_explicit = 1
@@ -93,7 +99,8 @@ let g:ale_fix_on_save = 1
 let g:coc_global_extensions = [
         \ 'coc-snippets',
         \ 'coc-vimlsp',
-        \ 'coc-json']
+        \ 'coc-json',
+        \ 'coc-pyright']
 
 " Use <c-space> to trigger completion.
 if has('nvim')

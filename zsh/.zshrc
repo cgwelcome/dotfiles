@@ -85,13 +85,16 @@ plugins=(
   tmux
   docker
   docker-compose
+  virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/usr/local/texlive/2020/bin/x86_64-linux:~/.local/bin:$PATH
+export INFOPATH=$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/info
+export MANPATH=$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -114,6 +117,14 @@ export EDITOR='nvim'
 export INFOPATH=$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/info
 export MANPATH=$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man
 
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "/home/charles/.ghcup/env" ] && source "/home/charles/.ghcup/env" # ghcup-env
+
