@@ -3,3 +3,4 @@ nvim/.config/coc
 ssh/.ssh
 ssh/.ssh/config
 zsh/.p10k.zsh
+fzf/.fzf.zsh
