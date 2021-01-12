@@ -1,5 +1,5 @@
 vim/.vim/plugged
 nvim/.config/coc
-ssh/.ssh/id_rsa
-ssh/.ssh/id_rsa.pub
+ssh/.ssh
+ssh/.ssh/config
 zsh/.p10k.zsh
