@@ -120,3 +120,5 @@ export MANPATH=$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "/home/charles/.ghcup/env" ] && source "/home/charles/.ghcup/env" # ghcup-env
+
+export GPG_TTY=$(tty)
