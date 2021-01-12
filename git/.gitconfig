@@ -1,0 +1,6 @@
+[user]
+  name = cgwelcome
+  email = charlesgao.c@gmail.com
+  signingkey = F984410803F8D89F
+[commit]
+  gpgsign = true
