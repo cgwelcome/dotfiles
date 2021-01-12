@@ -1,2 +1,5 @@
 vim/.vim/plugged
 nvim/.config/coc
+ssh/.ssh/id_rsa
+ssh/.ssh/id_rsa.pub
+zsh/.p10k.zsh
