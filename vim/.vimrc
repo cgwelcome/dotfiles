@@ -57,6 +57,7 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'lervag/vimtex'
 Plug 'nacitar/a.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
