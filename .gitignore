@@ -1,6 +1,6 @@
 vim/.vim/plugged
 nvim/.config/coc
 ssh/.ssh
-ssh/.ssh/config
+git/.gitconfig
 zsh/.p10k.zsh
 fzf/.fzf.zsh
