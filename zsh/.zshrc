@@ -79,21 +79,21 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  git-flow
   colored-man-pages
   zsh-syntax-highlighting
   zsh-autosuggestions
   tmux
   docker
   docker-compose
+  direnv
+  poetry
+  autoswitch_virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export PATH=/usr/local/texlive/2020/bin/x86_64-linux:~/.local/bin:$PATH
-export INFOPATH=$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/info
-export MANPATH=$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -120,4 +120,9 @@ export MANPATH=$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "/home/charles/.ghcup/env" ] && source "/home/charles/.ghcup/env" # ghcup-env
-#export GPG_TTY=$(tty)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/charlesgao/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/charlesgao/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/charlesgao/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/charlesgao/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

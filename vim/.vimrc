@@ -31,7 +31,12 @@ endif
 
 let g:mapleader = ' '
 
-let g:python_host_prog='/usr/bin/python'
+if has('macunix')
+    let g:python3_host_prog='/opt/homebrew/bin/python3'
+elseif has('unix')
+    let g:python3_host_prog='/usr/bin/python'
+endif
+let g:loaded_python_provider = 0
 
 colorscheme koehler
 hi Pmenu ctermfg=yellow ctermbg=black
