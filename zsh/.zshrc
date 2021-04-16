@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/opt/homebrew/bin:/usr/local/texlive/2020/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -119,10 +119,8 @@ export MANPATH=$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "/home/charles/.ghcup/env" ] && source "/home/charles/.ghcup/env" # ghcup-env
+[ -f ~/.ghcup/env ] && source ~/ghcup/env
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/charlesgao/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/charlesgao/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/charlesgao/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/charlesgao/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Google Cloud SDK.
+[ -f /opt/google-cloud-sdk/path.zsh.inc ] && source /opt/google-cloud-sdk/path.zsh.inc
+[ -f /opt/google-cloud-sdk/completion.zsh.inc ] && source /opt/google-cloud-sdk/completion.zsh.inc

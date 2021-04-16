@@ -20,6 +20,7 @@ set cmdheight=2
 set expandtab
 
 set splitright
+set modifiable
 
 autocmd BufRead,BufNewFile *.asm setlocal filetype=nasm
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
@@ -32,7 +33,7 @@ endif
 let g:mapleader = ' '
 
 if has('macunix')
-    let g:python3_host_prog='/opt/homebrew/bin/python3'
+    let g:python3_host_prog='/usr/local/bin/python3'
 elseif has('unix')
     let g:python3_host_prog='/usr/bin/python'
 endif
@@ -49,7 +50,6 @@ Plug 'airblade/vim-gitgutter'
 Plug '~/.fzf'
 
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'w0rp/ale'
@@ -74,10 +74,6 @@ endif
 let g:airline_symbols.crypt = ''
 let g:airline_theme = 'murmur'
 
-" nerdtree
-let g:NERDTreeQuitOnOpen = 1
-nnoremap <leader>nn :NERDTreeToggle<CR>
-
 " fzf
 nnoremap <leader><space> :FZF<CR>
 
@@ -89,15 +85,17 @@ let g:vimtex_indent_ignored_envs = ['document', 'center', 'minipage',
 " ale
 let g:ale_linters = {
     \ 'tex': ['chktex'],
-    \ 'python': ['flake8'],
+    \ 'python': ['flake8', 'mypy'],
     \ }
 
 let g:ale_fixers = {
     \ 'cpp': ['clang-format'],
     \ 'haskell': ['brittany'],
     \ 'python': ['black'],
+    \ 'yaml': ['prettier'],
     \ }
 
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
@@ -106,7 +104,7 @@ let g:coc_global_extensions = [
         \ 'coc-snippets',
         \ 'coc-vimlsp',
         \ 'coc-json',
-        \ 'coc-pyright']
+        \ 'coc-jedi']
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -117,7 +115,7 @@ endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
