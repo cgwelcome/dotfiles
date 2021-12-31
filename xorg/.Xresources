@@ -1,4 +1,4 @@
-URxvt.font: xft:Fira Code:size=12, xft:MesloLGS NF:size=12
+URxvt.font: xft:Fira Code:size=16, xft:MesloLGS NF:size=16
 URxvt.letterSpace: 0
 URxvt*scrollColor: #1E1E1E
 URxvt*scrollBar_right: true

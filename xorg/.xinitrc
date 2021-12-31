@@ -1,4 +1,7 @@
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+#!/bin/sh
+
+userresources=${HOME}/.Xresources
+[ -f "$userresources" ] && xrdb -merge "$userresources"
 
 eval "$(ssh-agent)"
 
