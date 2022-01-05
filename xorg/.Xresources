@@ -1,37 +1,44 @@
 URxvt.font: xft:Fira Code:size=16, xft:MesloLGS NF:size=16
-URxvt.letterSpace: 0
 URxvt*scrollColor: #1E1E1E
 URxvt*scrollBar_right: true
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard-osc
 
 URxvt.transparent: true
 URxvt.shading: 20
-URxvt.background: #1C1C1C
-URxvt.foreground: #DEDEDE
+
+! special
+*.foreground:   #d0d0d0
+*.background:   #151515
+*.cursorColor:  #d0d0d0
 
 ! black
-URxvt.color0  : #2E3436
-URxvt.color8  : #555753
+*.color0:       #151515
+*.color8:       #505050
+
 ! red
-URxvt.color1  : #CC0000
-URxvt.color9  : #EF2929
+*.color1:       #fb9fb1
+*.color9:       #fb9fb1
+
 ! green
-URxvt.color2  : #4E9A06
-URxvt.color10 : #8AE234
+*.color2:       #acc267
+*.color10:      #acc267
+
 ! yellow
-URxvt.color3  : #C4A000
-URxvt.color11 : #FCE94F
+*.color3:       #ddb26f
+*.color11:      #ddb26f
+
 ! blue
-URxvt.color4  : #3465A4
-URxvt.color12 : #729FCF
+*.color4:       #6fc2ef
+*.color12:      #6fc2ef
+
 ! magenta
-URxvt.color5  : #75507B
-URxvt.color13 : #AD7FA8
+*.color5:       #e1a3ee
+*.color13:      #e1a3ee
+
 ! cyan
-URxvt.color6  : #06989A
-URxvt.color14 : #34E2E2
+*.color6:       #12cfc0
+*.color14:      #12cfc0
+
 ! white
-URxvt.color7  : #D3D7CF
-URxvt.color15 : #EEEEEC
+*.color7:       #d0d0d0
+*.color15:      #f5f5f5
