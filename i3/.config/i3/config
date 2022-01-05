@@ -93,8 +93,8 @@ bindsym $mod+a focus parent
 set $ws1 1: www
 set $ws2 2: term
 set $ws3 3: term
-set $ws4 4: discord
-set $ws5 5: zoom
+set $ws4 4:
+set $ws5 5:
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -102,9 +102,6 @@ set $ws9 9
 set $ws10 10
 
 assign [class="Firefox"] $ws1
-assign [class="discord"] $ws4
-assign [class="zoom"] $ws5
-
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -172,12 +169,8 @@ bar {
         status_command i3status
 }
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
-
-bindsym XF86MonBrightnessUp exec --no-startup-id exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id exec xbacklight -dec 10
+bindsym XF86AudioRaiseVolume exec --no-startup-id mixer vol +5
+bindsym XF86AudioLowerVolume exec --no-startup-id mixer vol -5
 
 gaps inner 10
 gaps outer 1
