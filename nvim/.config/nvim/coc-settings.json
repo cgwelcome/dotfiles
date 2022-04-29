@@ -2,8 +2,14 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp"],
-      "rootPatterns": [".ccls", "compile_commands.json"],
+      "filetypes": [
+        "c",
+        "cpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json"
+      ],
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls"
@@ -12,9 +18,20 @@
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
-      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
-      "filetypes": ["haskell", "lhaskell"]
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ]
     }
   }
 }

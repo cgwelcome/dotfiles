@@ -22,7 +22,7 @@ set expandtab
 set splitright
 set modifiable
 
-autocmd BufRead,BufNewFile *.asm setlocal filetype=nasm
+autocmd BufNewFile,BufFilePre,BufRead *.asm setlocal filetype=nasm
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType vim setlocal shiftwidth=4 tabstop=4
 if has('nvim')
@@ -47,10 +47,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'airblade/vim-gitgutter'
-Plug '~/.fzf'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdtree'
+
 
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -74,8 +79,17 @@ endif
 let g:airline_symbols.crypt = ''
 let g:airline_theme = 'murmur'
 
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " fzf
-nnoremap <leader><space> :FZF<CR>
+nnoremap <leader><space> :Files<CR>
+nnoremap <leader>r :Rg<CR>
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 
 " vimtex
 let g:vimtex_view_general_viewer = 'zathura'
@@ -91,13 +105,18 @@ let g:ale_linters = {
 let g:ale_fixers = {
     \ 'cpp': ['clang-format'],
     \ 'haskell': ['brittany'],
-    \ 'python': ['black'],
+    \ 'python': ['isort', 'black'],
     \ 'yaml': ['prettier'],
+    \ 'json': ['jq'],
     \ }
 
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
+
+" vimwiki
+let g:vimwiki_list = [{'path': $HOME . '/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " coc
 let g:coc_global_extensions = [
