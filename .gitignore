@@ -1,6 +1,5 @@
-vim/.vim/plugged
+vim/.vim/*
 nvim/.config/coc
-ssh/.ssh
-git/.gitconfig
-zsh/.p10k.zsh
-fzf/.fzf.zsh
+fish/.config/fish
+fish/.config/fish/config.fish
+fish/.config/fish/fish_plugins
