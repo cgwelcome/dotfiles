@@ -9,6 +9,7 @@ require("nvim-tree").setup()
 require("neogit").setup {
 	kind = "split_above",
 }
+require('gitsigns').setup()
 require("lualine").setup {
 	options = { theme = "ayu_mirage" }
 }
@@ -17,7 +18,6 @@ require("mini.cursorword").setup()
 require("mini.surround").setup()
 require("mini.comment").setup()
 require("mini.trailspace").setup()
-require('gitsigns').setup()
 
 vim.api.nvim_command("autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no")
 vim.api.nvim_command("autocmd BufNewFile,BufFilePre,BufRead *.asm setlocal filetype=nasm")
