@@ -7,6 +7,9 @@ vim.o.tabstop = 4
 require("plugins")
 require("nvim-tree").setup()
 require("neogit").setup {
+	commit_popup = {
+		kind = "split_above",
+	},
 	kind = "split_above",
 }
 require('gitsigns').setup()
