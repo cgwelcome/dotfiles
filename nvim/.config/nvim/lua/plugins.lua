@@ -19,7 +19,13 @@ return require('packer').startup(function()
 		requires = 'nvim-lua/plenary.nvim'
 	}
 	use {
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'make'
+	}
+	use {
 		'echasnovski/mini.nvim',
 		branch = 'stable'
 	}
+	use 'neovim/nvim-lspconfig'
+	use 'gpanders/editorconfig.nvim'
 end)
